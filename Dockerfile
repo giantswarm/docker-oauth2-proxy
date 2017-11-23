@@ -5,6 +5,6 @@ RUN apk --no-cache add --virtual .build-deps curl \
     | tar -C /usr/local/bin --strip-components 1 -xz \
   && apk del .build-deps
 
-COPY oauth2_proxy /etc/oauth2_proxy/
+COPY oauth2_proxy.cfg /etc/oauth2_proxy/
 
 CMD ["oauth2_proxy", "-config=/etc/oauth2_proxy/oauth2_proxy.cfg"]
